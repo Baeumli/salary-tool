@@ -1,3 +1,25 @@
-.button {
-    -fx-font-weight: bold;
+.tab-pane {
+    -fx-tab-min-height: 5em;
+    -fx-tab-max-height: 5em;
+    
+    -fx-tab-min-width: 0.5em;
+    -fx-tab-max-width: 0.5em;
+    -fx-padding: 0 -1 -1 -1;
+    
+}
+
+.tab .tab-label {
+    -fx-content-display:center;
+    -fx-text-fill: #000000;
+    
+}
+
+.tab {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 30 0 30;
+}
+
+.optionPane {
+    -fx-background-color: #FFFFFF;
 }
