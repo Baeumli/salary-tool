@@ -16,14 +16,13 @@
 }
 
 .tab {
-    -fx-background-color: #ffffff;
+    -fx-background-color: transparent;
     -fx-background-insets: 0.0;
     -fx-background-radius: 0.0;;
     -fx-padding: 0 30 0 30;
 }
 
 .tab:selected {
-    -fx-background-color: red;
     -fx-background-radius: 0;
     -fx-background-insets: 0;
     -fx-border-width: 0 0 0 0;
@@ -36,7 +35,9 @@
 }
 
 .tab-pane *.tab-header-background {
-    -fx-background-color: transparent;
+    -fx-background-color: #ffffff;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #dddddd;
 }
 
 .tab-pane:left *.tab-header-area {
@@ -50,5 +51,88 @@
 }
 
 .optionPane {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: f5f5f5;
+    -fx-border-width: 0 2 0 0;
+    -fx-border-color: #cccccc;
+}
+
+.tab-person .img-view {
+    -fx-image: url("../img/icon_person_grey.png");
+
+}
+
+.tab-person:hover .img-view {
+    -fx-image: url("../img/icon_person_black.png");
+}
+
+.tab-person:selected .img-view {
+    -fx-image: url("../img/icon_person_black.png");
+}
+
+
+.tab-payroll .img-view {
+    -fx-image: url("../img/icon_payroll_grey.png");
+
+}
+
+.tab-payroll:hover .img-view {
+    -fx-image: url("../img/icon_payroll_black.png");
+}
+
+.tab-payroll:selected .img-view {
+    -fx-image: url("../img/icon_payroll_black.png");
+}
+
+
+.tab-pdf .img-view{
+    -fx-image: url("../img/icon_pdf_grey.png");
+
+}
+
+.tab-pdf:hover .img-view {
+    -fx-image: url("../img/icon_pdf_black.png");
+}
+
+.tab-pdf:selected .img-view {
+    -fx-image: url("../img/icon_pdf_black.png");
+}
+
+
+.preview-pane {
+    -fx-background-color: #e4e4e4;
+}
+
+.preview {
+    -fx-border-width: 1px;
+    -fx-border-color: #cccccc;
+}
+
+.text-field {
+    -fx-border-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-border-color: #dddddd;
+    -fx-focus-traversable: false;
+}
+
+.text-field:focused {
+    -fx-border-color: #bbbbbb;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50;
+    -fx-border-width: 1;
+    -fx-border-radius: 45;
+    -fx-border-color: #858585;
+    -fx-focus-traversable: false;
+}
+
+.button:hover {
+    -fx-background-color: #e5e5e5;
+}
+
+.button:pressed {
+    -fx-background-color: #d5d5d5;
 }

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebView;
 
 public class Main_Controller implements Initializable {
 
@@ -14,6 +15,8 @@ public class Main_Controller implements Initializable {
     private AnchorPane rootPane;
     @FXML
     private TabPane tabPane;
+    @FXML
+    private WebView webView;
     
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
