@@ -136,3 +136,24 @@
 .button:pressed {
     -fx-background-color: #d5d5d5;
 }
+
+.date-picker {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../img/icon_calendar_dd.png");
+    -fx-background-size: 70% 70%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    
+}
+
+.date-picker:focused .arrow-button {
+    -fx-background-image: url("../img/icon_calendar_bb.png");
+}
+
+.date-picker:editable > .arrow-button > * {
+    -fx-opacity: 0;
+}
