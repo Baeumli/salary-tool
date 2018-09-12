@@ -6,7 +6,8 @@
 package me.baeumli.idpa.lohnblatt.generator.classes;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -16,17 +17,14 @@ public class Model {
     private final double ALV = 0.011;
     private final double AHV_IV_EO = 0.05125;
     private final double koordinationsAbzug = 24675;
-    private double bvg = 0.07;
+    private final double bvg = 0.07;
     
-    private ArrayList<Child> kinder = new ArrayList<>();
     private double bruttoLohn;
     private double UVG, NBU, BU;
-    
-    
-    //Setter
-    public void newChild(int age, String deployment){
-        kinder.add(new Child(age, deployment));
-    }
+    private String firstname;
+    private String lastname;
+    private String birthday;
+    private String ahvNumber;
     
     public void setUVG(double UVG) {
         this.UVG = UVG;
@@ -40,11 +38,6 @@ public class Model {
         this.BU = BU;
     }
     
-    //Getter
-    public ArrayList<Child> getKinder(){
-        return kinder;
-    }
-
     public BigDecimal getBruttolohn() {
         return BigDecimal.valueOf(bruttoLohn);
     }
@@ -80,6 +73,42 @@ public class Model {
     public void setBruttoLohn(double bruttoLohn) {
         this.bruttoLohn = bruttoLohn;
     }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+        this.birthday = birthday.format(formatter);
+    }
+
+    public String getAhvNumber() {
+        return ahvNumber;
+    }
+
+    public void setAhvNumber(String ahvNumber) {
+        this.ahvNumber = ahvNumber;
+    }
+    
+    
+    
     
     
 }

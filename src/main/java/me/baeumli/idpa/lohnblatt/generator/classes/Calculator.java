@@ -13,7 +13,13 @@ import java.math.BigDecimal;
  */
 
 public class Calculator {
-    private Model model = new Model();
+
+    private Model model;
+    
+    public Calculator(Model model) {
+        this.model = model;
+    }
+
     
     private double getNettolohn(){
         BigDecimal alv = BigDecimal.valueOf(this.getALV());
@@ -67,13 +73,6 @@ public class Calculator {
         return alv.doubleValue();
     }
     
-    public double getKinderzulage(){
-        int output = 0;
-        for(Child c : model.getKinder()){
-            output += c.getZulage();
-        }
-        return output;
-    }
     
     public double getBruttolohn(){
         return model.getBruttolohn().doubleValue();

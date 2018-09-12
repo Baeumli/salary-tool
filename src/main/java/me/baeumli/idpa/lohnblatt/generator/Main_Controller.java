@@ -9,9 +9,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import me.baeumli.idpa.lohnblatt.generator.classes.Calculator;
+import me.baeumli.idpa.lohnblatt.generator.classes.Child;
+import me.baeumli.idpa.lohnblatt.generator.classes.Export;
 import me.baeumli.idpa.lohnblatt.generator.classes.Model;
-
+import me.baeumli.idpa.lohnblatt.generator.classes.HTML;
 /**
  *
  * @author Baeumli
@@ -30,13 +34,18 @@ public class Main_Controller implements Initializable {
     @FXML private TextField txtfieldWage;
     @FXML private TextField txtfieldNBU;
     @FXML private TextField txtfieldBU;
+    @FXML
+    private TextField txtfieldChildrenOver16;
+    @FXML
+    private TextField txtfieldChildrenUnder16;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+            HTML html = new HTML();
+            WebEngine engine = webView.getEngine();
+            engine.loadContent(html.getContent());
     }    
-
 
     @FXML
     private void txtfieldAHVOnAction(ActionEvent event) {
@@ -50,5 +59,33 @@ public class Main_Controller implements Initializable {
         model.setUVG(Double.parseDouble(txtfieldUVG.getText()));
         model.setBU(Double.parseDouble(txtfieldBU.getText()));
         model.setNBU(Double.parseDouble(txtfieldNBU.getText()));
+        
+        model.setFirstname(txtfieldFirstname.getText());
+        model.setLastname(txtfieldLastname.getText());
+        model.setAhvNumber(txtfieldAHV.getText());
+        model.setBirthday(datepickerBirthday.getValue());
+        
+        
+        
+        int over16 = Integer.parseInt(txtfieldChildrenOver16.getText());
+        int under16 = Integer.parseInt(txtfieldChildrenUnder16.getText());
+        
+        Child children = new Child(over16, under16);
+        System.out.println(children.getZulagen());
+        
+        Calculator calculator = new Calculator(model);
+        System.out.println(calculator.getBruttolohn());
+    }
+
+
+    @FXML
+    private void btnPdfOnAction(ActionEvent event) {
+        HTML html = new HTML();
+        Export export = new Export();
+        export.saveAsPdf(html.getContent());
+    }
+
+    @FXML
+    private void btnPrintOnAction(ActionEvent event) {
     }
 }

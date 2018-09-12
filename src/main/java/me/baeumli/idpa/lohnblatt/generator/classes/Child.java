@@ -11,29 +11,28 @@ package me.baeumli.idpa.lohnblatt.generator.classes;
  */
 public class Child {
 
-    private int age;
-    private int childAllowance;
+    private int childrenOver16;
+    private int childrenUnder16;
+    private int zulagen;
 
-    public Child(int age, String employment) {
-        if (age > 16) {
-            switch (employment) {
-                case "student":
-                    childAllowance = 200;
-                case "employed":
-                    childAllowance = 0;
-                case "inEducation":
-                    childAllowance = 250;
-            }
-        }else{
-            childAllowance = 200;
+    public Child(int over16, int under16) {
+        for (int i = 0; i < over16; i++) {
+            zulagen += 250;
+        }
+        for (int i = 0; i < under16; i++) {
+            zulagen += 200;
         }
     }
 
-    public int getAge() {
-        return age;
+    public int getZulagen() {
+        return zulagen;
     }
 
-    public int getZulage() {
-        return childAllowance;
+    public void setZulagen(int zulagen) {
+        this.zulagen = zulagen;
     }
+
+    
+    
+    
 }
