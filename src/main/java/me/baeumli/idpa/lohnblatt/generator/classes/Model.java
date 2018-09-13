@@ -27,15 +27,15 @@ public class Model {
     private String ahvNumber;
     
     public void setUVG(double UVG) {
-        this.UVG = UVG;
+        this.UVG = UVG / 100;
     }
 
     public void setNBU(double NBU) {
-        this.NBU = NBU;
+        this.NBU = NBU / 100;
     }
  
     public void setBU(double BU) {
-        this.BU = BU;
+        this.BU = BU / 100;
     }
     
     public BigDecimal getBruttolohn() {
@@ -106,8 +106,7 @@ public class Model {
     public void setAhvNumber(String ahvNumber) {
         this.ahvNumber = ahvNumber;
     }
-    
-    
+
     
     
     

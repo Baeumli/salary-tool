@@ -17,10 +17,10 @@ public class Child {
 
     public Child(int over16, int under16) {
         for (int i = 0; i < over16; i++) {
-            zulagen += 250;
+            this.zulagen += 250;
         }
         for (int i = 0; i < under16; i++) {
-            zulagen += 200;
+            this.zulagen += 200;
         }
     }
 

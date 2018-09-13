@@ -39,12 +39,14 @@ public class Main_Controller implements Initializable {
     @FXML
     private TextField txtfieldChildrenUnder16;
     
+    Model model;
+    Calculator calculator;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
             HTML html = new HTML();
             WebEngine engine = webView.getEngine();
-            engine.loadContent(html.getContent());
     }    
 
     @FXML
@@ -53,7 +55,7 @@ public class Main_Controller implements Initializable {
 
     @FXML
     private void btnSubmitOnAction(ActionEvent event) {
-        Model model = new Model();
+        model = new Model();
         
         model.setBruttoLohn(Double.parseDouble(txtfieldWage.getText()));
         model.setUVG(Double.parseDouble(txtfieldUVG.getText()));
@@ -73,7 +75,7 @@ public class Main_Controller implements Initializable {
         Child children = new Child(over16, under16);
         System.out.println(children.getZulagen());
         
-        Calculator calculator = new Calculator(model);
+        calculator = new Calculator(model);
         System.out.println(calculator.getBruttolohn());
     }
 
@@ -82,7 +84,12 @@ public class Main_Controller implements Initializable {
     private void btnPdfOnAction(ActionEvent event) {
         HTML html = new HTML();
         Export export = new Export();
-        export.saveAsPdf(html.getContent());
+        export.saveAsPdf(html.generateFile(
+                calculator.getBruttolohn(),
+                calculator.getAbzugAHV(),
+                calculator.getALV(),
+                calculator.getNBU(),
+                calculator.getAbzugBvg()));
     }
 
     @FXML
