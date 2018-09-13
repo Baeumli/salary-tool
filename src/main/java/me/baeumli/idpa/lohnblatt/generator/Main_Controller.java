@@ -66,14 +66,9 @@ public class Main_Controller implements Initializable {
         model.setLastname(txtfieldLastname.getText());
         model.setAhvNumber(txtfieldAHV.getText());
         model.setBirthday(datepickerBirthday.getValue());
+        model.setOver16(Integer.parseInt(txtfieldChildrenOver16.getText()));
+        model.setUnder16(Integer.parseInt(txtfieldChildrenUnder16.getText()));
         
-        
-        
-        int over16 = Integer.parseInt(txtfieldChildrenOver16.getText());
-        int under16 = Integer.parseInt(txtfieldChildrenUnder16.getText());
-        
-        Child children = new Child(over16, under16);
-        System.out.println(children.getZulagen());
         
         calculator = new Calculator(model);
         System.out.println(calculator.getBruttolohn());

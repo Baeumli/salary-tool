@@ -25,6 +25,8 @@ public class Model {
     private String lastname;
     private String birthday;
     private String ahvNumber;
+    private int under16;
+    private int over16;
     
     public void setUVG(double UVG) {
         this.UVG = UVG / 100;
@@ -105,6 +107,22 @@ public class Model {
 
     public void setAhvNumber(String ahvNumber) {
         this.ahvNumber = ahvNumber;
+    }
+
+    public int getUnder16() {
+        return under16;
+    }
+
+    public void setUnder16(int under16) {
+        this.under16 = under16;
+    }
+
+    public int getOver16() {
+        return over16;
+    }
+
+    public void setOver16(int over16) {
+        this.over16 = over16;
     }
 
     

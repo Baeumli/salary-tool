@@ -75,6 +75,14 @@ public class Calculator {
     }
 
     public double getBruttolohn() {
-        return model.getBruttolohn().doubleValue();
+        return model.getBruttolohn().subtract(getZulagen());
+    }
+
+    public double getZulagen() {
+        BigDecimal zulagen = BigDecimal.valueOf(model.getOver16())
+        double zulage1 = model.getOver16() * 250;
+        double zulage2 = model.getUnder16() * 200;
+        
+        return zulage1 + zulage2;
     }
 }
