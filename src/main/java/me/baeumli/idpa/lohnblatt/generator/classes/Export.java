@@ -54,6 +54,7 @@ public class Export {
                 e.printStackTrace(new PrintWriter(sw));
                 String exceptionAsString = sw.toString();
                 alert.setContentText(exceptionAsString);
+                alert.show();
             }
         }
     }

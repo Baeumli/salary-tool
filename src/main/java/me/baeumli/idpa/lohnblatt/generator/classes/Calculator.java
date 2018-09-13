@@ -50,6 +50,7 @@ public class Calculator {
             e.printStackTrace(new PrintWriter(sw));
             String exceptionAsString = sw.toString();
             alert.setContentText(exceptionAsString);
+            alert.show();
         }
         return 0;
     }

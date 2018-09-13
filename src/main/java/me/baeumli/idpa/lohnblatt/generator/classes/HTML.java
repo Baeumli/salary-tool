@@ -145,6 +145,7 @@ public class HTML {
             e.printStackTrace(new PrintWriter(sw));
             String exceptionAsString = sw.toString();
             alert.setContentText(exceptionAsString);
+            alert.show();
         }
         return null;
     }

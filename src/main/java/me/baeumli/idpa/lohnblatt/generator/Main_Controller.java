@@ -24,7 +24,6 @@ import me.baeumli.idpa.lohnblatt.generator.classes.HTML;
  *
  * @author Baeumli
  */
-
 public class Main_Controller implements Initializable {
 
     @FXML
@@ -62,8 +61,6 @@ public class Main_Controller implements Initializable {
         // TODO
     }
 
-    
-    
     //Passes all the values to the model
     @FXML
     private void btnSubmitOnAction(ActionEvent event) {
@@ -86,23 +83,14 @@ public class Main_Controller implements Initializable {
             WebEngine engine = webView.getEngine();
             engine.load(html.getContent());
         } catch (Exception e) {
-            model = new Model();
-            model.setMonatslohn(Double.parseDouble(txtfieldWage.getText()));
-            model.setUVG(Double.parseDouble(txtfieldUVG.getText()));
-            model.setBU(Double.parseDouble(txtfieldBU.getText()));
-            model.setNBU(Double.parseDouble(txtfieldNBU.getText()));
-
-            model.setFirstname(txtfieldFirstname.getText());
-            model.setLastname(txtfieldLastname.getText());
-            model.setAhvNumber(txtfieldAHV.getText());
-            model.setBirthday(datepickerBirthday.getValue());
-            model.setOver16(Integer.parseInt(txtfieldChildrenOver16.getText()));
-            model.setUnder16(Integer.parseInt(txtfieldChildrenUnder16.getText()));
-            calculator = new Calculator(model);
-
-            HTML html = new HTML();
-            WebEngine engine = webView.getEngine();
-            engine.load(html.getContent());
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ein Fehler ist aufgetreten!");
+            alert.setHeaderText("Verursacht durch:");
+            StringWriter sw = new StringWriter();
+            e.printStackTrace(new PrintWriter(sw));
+            String exceptionAsString = sw.toString();
+            alert.setContentText(exceptionAsString);
+            alert.show();
         }
 
     }
@@ -121,6 +109,7 @@ public class Main_Controller implements Initializable {
             e.printStackTrace(new PrintWriter(sw));
             String exceptionAsString = sw.toString();
             alert.setContentText(exceptionAsString);
+            alert.show();
         }
 
     }
