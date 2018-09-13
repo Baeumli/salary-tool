@@ -21,6 +21,8 @@ public class HTML {
         try {
             double abzugTotal = calc.getALV() + calc.getAbzugAHV() + calc.getAbzugBvg() + calc.getBU() + calc.getNBU() + calc.getUVG();
 
+            //HTML boilerplate
+            
             content = "<!DOCTYPE html>\n"
                     + "<html lang=\"en\">\n"
                     + "<head>\n"

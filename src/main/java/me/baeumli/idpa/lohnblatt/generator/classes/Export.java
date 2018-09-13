@@ -22,6 +22,8 @@ import javafx.stage.FileChooser;
  */
 public class Export {
 
+    
+    //Using iText Library to generate PDF from HTML
     public void saveAsPdf(String content) {
         try {
 

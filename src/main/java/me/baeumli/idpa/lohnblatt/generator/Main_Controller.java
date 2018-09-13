@@ -62,6 +62,9 @@ public class Main_Controller implements Initializable {
         // TODO
     }
 
+    
+    
+    //Passes all the values to the model
     @FXML
     private void btnSubmitOnAction(ActionEvent event) {
         try {

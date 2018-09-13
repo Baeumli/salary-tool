@@ -14,6 +14,9 @@ import javafx.scene.control.Alert;
  *
  * @author LucaE
  */
+
+//class used to do all the calculations
+
 public class Calculator {
 
     private Model model;

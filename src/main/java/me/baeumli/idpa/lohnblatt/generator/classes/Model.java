@@ -13,6 +13,9 @@ import java.time.format.DateTimeFormatter;
  *
  * @author LucaE
  */
+
+//Class used to pass around variables
+
 public class Model {
     private final double ALV = 0.011;
     private final double AHV_IV_EO = 0.05125;
