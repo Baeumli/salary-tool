@@ -18,8 +18,7 @@ public class Model {
     private final double AHV_IV_EO = 0.05125;
     private final double koordinationsAbzug = 24675;
     private final double bvg = 0.07;
-    
-    private double bruttoLohn;
+    private double monatslohn;
     private double UVG, NBU, BU;
     private String firstname;
     private String lastname;
@@ -40,10 +39,6 @@ public class Model {
         this.BU = BU / 100;
     }
     
-    public BigDecimal getBruttolohn() {
-        return BigDecimal.valueOf(bruttoLohn);
-    }
-
     public BigDecimal getUVG() {
         return BigDecimal.valueOf(UVG);
     }
@@ -70,10 +65,6 @@ public class Model {
     
     public BigDecimal getKoordinationsabzug(){
         return BigDecimal.valueOf(koordinationsAbzug);
-    }
-
-    public void setBruttoLohn(double bruttoLohn) {
-        this.bruttoLohn = bruttoLohn;
     }
 
     public String getFirstname() {
@@ -125,6 +116,15 @@ public class Model {
         this.over16 = over16;
     }
 
+    public BigDecimal getMonatslohn() {
+        return BigDecimal.valueOf(monatslohn);
+    }
+
+    public void setMonatslohn(double monatslohn) {
+        this.monatslohn = monatslohn;
+    }
+
+    
     
     
     
